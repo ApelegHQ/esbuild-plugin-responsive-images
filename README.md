@@ -34,7 +34,7 @@ await esbuild
 		outdir: 'build',
 		bundle: true,
 		format: 'cjs',
-		plugins: [ri()],
+		plugins: [responsiveImages()],
 	});
 ```
 
