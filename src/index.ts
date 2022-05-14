@@ -361,9 +361,12 @@ export default (): esbuild.Plugin => ({
 
 			const pathUrl = new URL(path);
 
-			const result = await build.resolve(pathUrl.pathname, {
-				resolveDir,
-			});
+			const result = await build.resolve(
+				decodeURIComponent(pathUrl.pathname),
+				{
+					resolveDir,
+				},
+			);
 
 			if (result.errors.length > 0) {
 				return { errors: result.errors };
