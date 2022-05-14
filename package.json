@@ -1,0 +1,48 @@
+{
+  "name": "@exact-realty/esbuild-plugin-responsive-images",
+  "version": "1.0.0",
+  "description": "esbuild plugin for responsive images using Sharp",
+  "main": "dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lintFix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "build": "tsc --emitDeclarationOnly --declarationMap && node esbuild.mjs",
+    "test": "node esbuild.mjs && node test/build/esbuild.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "postinstall": "exit 0",
+    "version": "npm run lint && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exact-Realty/esbuild-plugin-responsive-images555.git"
+  },
+  "author": "Exact Realty Limited",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/sharp": "^0.30.2",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "esbuild": "^0.14.39",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "sharp": "^0.30.4",
+    "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "esbuild": "^0.14.39",
+    "sharp": "^0.30.4"
+  }
+}
