@@ -146,20 +146,21 @@ export default (): esbuild.Plugin => ({
 				const image = sharp(path);
 				const metadata = await image.metadata();
 
-				if (
-					outputFormats.length === 0 &&
-					metadata.format &&
-					metadata.format in supportedFormats
-				) {
-					outputFormats.push(metadata.format);
-				} else {
-					return {
-						errors: [
-							{
-								text: 'No output format specified, and unable to identify format in source image',
-							},
-						],
-					};
+				if (outputFormats.length === 0) {
+					if (
+						metadata.format &&
+						metadata.format in supportedFormats
+					) {
+						outputFormats.push(metadata.format);
+					} else {
+						return {
+							errors: [
+								{
+									text: 'No output format specified, and unable to identify format in source image',
+								},
+							],
+						};
+					}
 				}
 
 				const resizedImages = (
