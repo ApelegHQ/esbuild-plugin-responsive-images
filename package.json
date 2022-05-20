@@ -1,6 +1,6 @@
 {
   "name": "@exact-realty/esbuild-plugin-responsive-images",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "esbuild plugin for responsive images using Sharp",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Exact-Realty/esbuild-plugin-responsive-images555.git"
+    "url": "git+https://github.com/Exact-Realty/esbuild-plugin-responsive-images.git"
   },
   "author": "Exact Realty Limited",
   "license": "ISC",
@@ -44,5 +44,6 @@
   "peerDependencies": {
     "esbuild": "^0.14.39",
     "sharp": "^0.30.4"
-  }
+  },
+  "keywords": ["esbuild", "esbuild plugin", "responsive images", "sharp", "libvips", "srcset", "jpeg", "png", "webp", "avif"]
 }
