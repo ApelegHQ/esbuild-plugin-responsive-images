@@ -61,10 +61,10 @@ The import will return something like this:
 
 ```js
 {
-	width: 2000
-	height: 1333,
-	originalWidth: 133,
-	originalHeight: 200,
+	width: 200
+	height: 133,
+	originalWidth: 1333,
+	originalHeight: 2000,
 	src: 'http://example.com/assets/img1.200w-AAAAAAAA.png',
 	sources: [
 		[
