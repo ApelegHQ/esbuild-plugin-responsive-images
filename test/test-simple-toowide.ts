@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /* Copyright © 2021 Exact Realty Limited.
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -15,29 +13,24 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-import esbuild from 'esbuild';
+import assert from 'node:assert/strict';
 
-await esbuild.build({
-	entryPoints: ['./src/index.ts'],
-	outdir: 'dist',
-	bundle: true,
-	minify: true,
-	format: 'cjs',
-	entryNames: '[name]',
-	platform: 'node',
-	external: ['sharp'],
-});
+import * as x from 'respimg+file:./hubble_arp143.png?sizes=4000w';
 
-await esbuild.build({
-	entryPoints: ['./src/index.ts'],
-	outdir: 'dist',
-	bundle: true,
-	minify: true,
-	format: 'esm',
-	entryNames: '[name]',
-	platform: 'node',
-	external: ['sharp'],
-	outExtension: {
-		'.js': '.mjs',
-	},
-});
+assert.equal(x.width, 2000);
+assert.equal(x.height, 1333);
+assert.equal(x.originalWidth, 2000);
+assert.equal(x.originalHeight, 1333);
+assert.match(
+	x.src,
+	/^http:\/\/invalid\/assets\/hubble_arp143\.4000w-[^./]+\.png$/,
+);
+assert.ok(Array.isArray(x.sources));
+assert.equal(x.sources.length, 1);
+assert.ok(Array.isArray(x.sources[0]));
+assert.equal(x.sources[0].length, 2);
+assert.equal(x.sources[0][0], 'image/png');
+assert.match(
+	x.sources[0][1],
+	/^http:\/\/invalid\/assets\/hubble_arp143\.4000w-[^./]+\.png 4000w$/,
+);

@@ -1,6 +1,6 @@
 {
   "name": "@exact-realty/esbuild-plugin-responsive-images",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "esbuild plugin for responsive images using Sharp",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
@@ -15,7 +15,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lintFix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "build": "tsc --emitDeclarationOnly --declarationMap && node esbuild.mjs",
-    "test": "node esbuild.mjs && node test/build/esbuild.js",
+    "test": "mocha",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -30,6 +30,7 @@
   "author": "Exact Realty Limited",
   "license": "ISC",
   "devDependencies": {
+    "@types/mocha": "^9.1.1",
     "@types/sharp": "^0.30.2",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
@@ -37,13 +38,26 @@
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "mocha": "^10.0.0",
     "prettier": "^2.6.2",
     "sharp": "^0.30.4",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
   },
   "peerDependencies": {
     "esbuild": "^0.14.39",
     "sharp": "^0.30.4"
   },
-  "keywords": ["esbuild", "esbuild plugin", "responsive images", "sharp", "libvips", "srcset", "jpeg", "png", "webp", "avif"]
+  "keywords": [
+    "esbuild",
+    "esbuild plugin",
+    "responsive images",
+    "sharp",
+    "libvips",
+    "srcset",
+    "jpeg",
+    "png",
+    "webp",
+    "avif"
+  ]
 }
