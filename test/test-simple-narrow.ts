@@ -13,7 +13,24 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-import * as x from 'respimg+file:./hubble_arp143.png?sizes=4000w';
+import assert from 'node:assert/strict';
 
-console.log(JSON.parse(JSON.stringify(x)));
-console.log('success');
+import * as x from 'respimg+file:./hubble_arp143.png?sizes=200w';
+
+assert.equal(x.width, 200);
+assert.equal(x.height, 134);
+assert.equal(x.originalWidth, 2000);
+assert.equal(x.originalHeight, 1333);
+assert.match(
+	x.src,
+	/^http:\/\/invalid\/assets\/hubble_arp143\.200w-[^./]+\.png$/,
+);
+assert.ok(Array.isArray(x.sources));
+assert.equal(x.sources.length, 1);
+assert.ok(Array.isArray(x.sources[0]));
+assert.equal(x.sources[0].length, 2);
+assert.equal(x.sources[0][0], 'image/png');
+assert.match(
+	x.sources[0][1],
+	/^http:\/\/invalid\/assets\/hubble_arp143\.200w-[^./]+\.png 200w$/,
+);

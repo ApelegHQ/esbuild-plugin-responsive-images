@@ -32,7 +32,7 @@ const mimeMap = {
 };
 
 export default (): esbuild.Plugin => ({
-	name: 'test',
+	name: '@exact-realty/esbuild-plugin-responsive-images',
 	setup(build) {
 		build.onLoad(
 			{
@@ -287,9 +287,10 @@ export default (): esbuild.Plugin => ({
 								(d, i) =>
 									`import _i${+i}_ from '${Buffer.from(
 										args.path,
-									).toString('base64')}.${+i}.${d[0]}.${
-										d[1]
-									}';`,
+									).toString('base64')}.${+i}.${d[0].replace(
+										'.',
+										'-',
+									)}.${d[1]}';`,
 							)
 							.join('')}
 
@@ -422,7 +423,11 @@ export default (): esbuild.Plugin => ({
 						? origPath.slice(0, origPath.lastIndexOf('.'))
 						: origPath;
 
-				const name = `${origPathWithoutExtension}.${size}.${format}`;
+				const name = [
+					origPathWithoutExtension,
+					size.replace('-', '.'),
+					format,
+				].join('.');
 
 				return {
 					external: false,

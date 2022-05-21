@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"target": "es6",
-		"module": "es2020",
+		"module": "commonjs",
 		"moduleResolution": "node",
 		"outDir": "dist",
 		"strict": true,
@@ -18,12 +18,7 @@
 	"include": ["src/**/*", "types/**/*"],
 	"exclude": [
 		"node_modules",
-		"build",
-		"scripts",
-		"acceptance-tests",
-		"webpack",
-		"jest",
-		"razzle.config.js"
+		"build"
 	],
 	"types": ["node"]
 }

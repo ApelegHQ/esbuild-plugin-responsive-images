@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /* Copyright © 2021 Exact Realty Limited.
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -15,29 +13,4 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-import esbuild from 'esbuild';
-
-await esbuild.build({
-	entryPoints: ['./src/index.ts'],
-	outdir: 'dist',
-	bundle: true,
-	minify: true,
-	format: 'cjs',
-	entryNames: '[name]',
-	platform: 'node',
-	external: ['sharp'],
-});
-
-await esbuild.build({
-	entryPoints: ['./src/index.ts'],
-	outdir: 'dist',
-	bundle: true,
-	minify: true,
-	format: 'esm',
-	entryNames: '[name]',
-	platform: 'node',
-	external: ['sharp'],
-	outExtension: {
-		'.js': '.mjs',
-	},
-});
+export * as x from 'respimg+file:./hubble_arp143.png?sizes=7x,29w';
