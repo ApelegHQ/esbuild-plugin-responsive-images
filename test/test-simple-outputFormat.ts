@@ -18,7 +18,7 @@ import assert from 'node:assert/strict';
 import * as x from 'respimg+file:./hubble_arp143.png?sizes=20w&outputFormats=jpeg';
 
 assert.equal(x.width, 20);
-assert.equal(x.height, 14);
+assert.equal(x.height, 13);
 assert.equal(x.originalWidth, 2000);
 assert.equal(x.originalHeight, 1333);
 assert.match(

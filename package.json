@@ -1,6 +1,6 @@
 {
   "name": "@exact-realty/esbuild-plugin-responsive-images",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "esbuild plugin for responsive images using Sharp",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lintFix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "build": "tsc --emitDeclarationOnly --declarationMap && node esbuild.mjs",
     "test": "mocha",
     "prepare": "npm run build",
@@ -30,23 +30,23 @@
   "author": "Exact Realty Limited",
   "license": "ISC",
   "devDependencies": {
-    "@types/mocha": "^9.1.1",
-    "@types/sharp": "^0.30.2",
-    "@typescript-eslint/eslint-plugin": "^5.23.0",
-    "@typescript-eslint/parser": "^5.23.0",
-    "esbuild": "^0.14.39",
-    "eslint": "^8.15.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "mocha": "^10.0.0",
-    "prettier": "^2.6.2",
-    "sharp": "^0.30.4",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
+    "@types/mocha": "^10.0.1",
+    "@types/sharp": "^0.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "esbuild": "^0.17.18",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.8",
+    "sharp": "^0.32.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "esbuild": "^0.14.39",
-    "sharp": "^0.30.4"
+    "esbuild": "^0.17.18",
+    "sharp": "^0.32.1"
   },
   "keywords": [
     "esbuild",

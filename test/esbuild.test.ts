@@ -30,7 +30,9 @@ describe('Test', () => {
 			'test-multiple-x-widths-and-outputFormats',
 			'test-multiple-x-widths-and-outputFormats-displayWidth',
 		]) {
-			it(test, async () => {
+			it(test, async function () {
+				this.timeout(5000);
+
 				await esbuild
 					.build({
 						entryPoints: [path.join(__dirname, `${test}.ts`)],

@@ -15,10 +15,9 @@
 		"lib": ["es6", "ES2019.object", "dom"],
 		"declaration": true
 	},
-	"include": ["src/**/*", "types/**/*"],
+	"include": ["src/**/*"],
 	"exclude": [
 		"node_modules",
 		"build"
-	],
-	"types": ["node"]
+	]
 }

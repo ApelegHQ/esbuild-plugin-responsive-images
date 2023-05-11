@@ -366,6 +366,7 @@ export default (): esbuild.Plugin => ({
 				decodeURIComponent(pathUrl.pathname),
 				{
 					resolveDir,
+					kind: 'import-statement',
 				},
 			);
 
