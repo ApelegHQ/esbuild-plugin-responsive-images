@@ -115,9 +115,9 @@ export default (): esbuild.Plugin => ({
 
 				const sizeValidation = sizes.reduce(
 					(acc, cv) =>
-						/^[0-9]*[1-9][0-9]*w$/.test(cv)
+						/^0*[1-9][0-9]*w$/.test(cv)
 							? acc | 1
-							: /^([0-9]*[1-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)x$/.test(
+							: /^(0*[1-9][0-9]*(\.[0-9]*)?|0*\.0*[1-9][0-9]*)x$/.test(
 									cv,
 							  )
 							? acc | 2
