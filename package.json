@@ -1,6 +1,6 @@
 {
   "name": "@exact-realty/esbuild-plugin-responsive-images",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "esbuild plugin for responsive images using Sharp",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
@@ -19,7 +19,6 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
-    "postinstall": "exit 0",
     "version": "npm run lint && git add -A src",
     "postversion": "git push && git push --tags"
   },
@@ -32,21 +31,21 @@
   "devDependencies": {
     "@types/mocha": "^10.0.1",
     "@types/sharp": "^0.32.0",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "esbuild": "^0.18.13",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "esbuild": "^0.18.16",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
     "mocha": "^10.2.0",
     "prettier": "^3.0.0",
-    "sharp": "^0.32.3",
+    "sharp": "^0.32.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "esbuild": "^0.18.13",
-    "sharp": "^0.32.3"
+    "esbuild": "^0.17.0 || ^0.18.0",
+    "sharp": "^0.32.4"
   },
   "keywords": [
     "esbuild",

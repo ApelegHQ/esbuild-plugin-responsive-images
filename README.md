@@ -1,5 +1,12 @@
 # esbuild plugin for responsive images
 
+ [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Exact-Realty_esbuild-plugin-responsive-images&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Exact-Realty_esbuild-plugin-responsive-images)
+ [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Exact-Realty_esbuild-plugin-responsive-images&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Exact-Realty_esbuild-plugin-responsive-images)
+ [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Exact-Realty_esbuild-plugin-responsive-images&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Exact-Realty_esbuild-plugin-responsive-images)
+ [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Exact-Realty_esbuild-plugin-responsive-images&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Exact-Realty_esbuild-plugin-responsive-images)
+ [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Exact-Realty_esbuild-plugin-responsive-images&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Exact-Realty_esbuild-plugin-responsive-images)
+ ![NPM Downloads](https://img.shields.io/npm/dw/@exact-realty/esbuild-plugin-responsive-images?style=flat-square)
+
 ## How to use
 
 ### Installing
