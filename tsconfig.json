@@ -1,8 +1,8 @@
 {
 	"compilerOptions": {
 		"target": "es6",
-		"module": "commonjs",
-		"moduleResolution": "node",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
 		"outDir": "dist",
 		"strict": true,
 		"strictNullChecks": true,
@@ -15,7 +15,10 @@
 		"lib": ["es6", "ES2019.object", "dom"],
 		"declaration": true
 	},
-	"include": ["src/**/*"],
+	"ts-node": {
+		"experimentalResolver": true,
+	},
+	"include": ["src/**/*", "test/**/*"],
 	"exclude": [
 		"node_modules",
 		"build"

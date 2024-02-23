@@ -69,7 +69,7 @@ export default (): esbuild.Plugin => ({
 											] ?? t,
 									),
 							),
-					  )
+						)
 					: [];
 				const sizes = pluginData.params.has('sizes')
 					? Array.from(
@@ -78,10 +78,10 @@ export default (): esbuild.Plugin => ({
 									.split(',')
 									.map((t) => t.trim()),
 							),
-					  ).sort(
+						).sort(
 							(a, b) =>
 								Number(a.slice(0, -1)) - Number(b.slice(0, -1)),
-					  )
+						)
 					: [];
 				const displayWidth =
 					Math.round(Number(pluginData.params.get('displayWidth'))) ||
@@ -118,10 +118,10 @@ export default (): esbuild.Plugin => ({
 						/^0*[1-9][0-9]*w$/.test(cv)
 							? acc | 1
 							: /^(0*[1-9][0-9]*(\.[0-9]*)?|0*\.0*[1-9][0-9]*)x$/.test(
-									cv,
-							  )
-							? acc | 2
-							: acc | 4,
+										cv,
+								  )
+								? acc | 2
+								: acc | 4,
 					0,
 				);
 
@@ -169,11 +169,11 @@ export default (): esbuild.Plugin => ({
 							let width = size.endsWith('w')
 								? Number(size.slice(0, -1))
 								: size.endsWith('x')
-								? Math.round(
-										Number(size.slice(0, -1)) *
-											displayWidth,
-								  )
-								: NaN;
+									? Math.round(
+											Number(size.slice(0, -1)) *
+												displayWidth,
+										)
+									: NaN;
 
 							if (!Number.isInteger(width)) {
 								throw new Error('Invalid width');
@@ -269,16 +269,16 @@ export default (): esbuild.Plugin => ({
 				const fallbackImage =
 					'png' in srcsetMap && 'jpeg' in srcsetMap
 						? srcsetMap['png'][0][1].info.size >
-						  srcsetMap['jpeg'][0][1].info.size
+							srcsetMap['jpeg'][0][1].info.size
 							? 'jpeg'
 							: 'png'
 						: 'png' in srcsetMap
-						? 'png'
-						: 'jpeg' in srcsetMap
-						? 'jpeg'
-						: 'webp' in srcsetMap
-						? 'webp'
-						: Object.keys(srcsetMap)[0];
+							? 'png'
+							: 'jpeg' in srcsetMap
+								? 'jpeg'
+								: 'webp' in srcsetMap
+									? 'webp'
+									: Object.keys(srcsetMap)[0];
 
 				return {
 					contents: `

@@ -15,9 +15,14 @@
 
 import esbuild from 'esbuild';
 import path from 'node:path';
-import ri from '../src';
+import ri from '../src/index.js';
 
 import assert from 'node:assert/strict';
+import { dirname } from 'node:path';
+import { describe, it } from 'node:test';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 describe('Test', () => {
 	describe('Import results in the right values', () => {
@@ -31,14 +36,12 @@ describe('Test', () => {
 			'test-multiple-x-widths-and-outputFormats-displayWidth',
 		]) {
 			it(test, async function () {
-				this.timeout(5000);
-
 				await esbuild
 					.build({
 						entryPoints: [path.join(__dirname, `${test}.ts`)],
 						outdir: path.join(__dirname, 'build'),
 						bundle: true,
-						format: 'cjs',
+						format: 'esm',
 						publicPath: 'http://invalid/assets',
 						plugins: [ri()],
 						platform: 'node',
@@ -68,7 +71,7 @@ describe('Test', () => {
 						entryPoints: [path.join(__dirname, `${test}.ts`)],
 						outdir: path.join(__dirname, 'build'),
 						bundle: true,
-						format: 'cjs',
+						format: 'esm',
 						publicPath: 'http://invalid/assets',
 						plugins: [ri()],
 						platform: 'node',
