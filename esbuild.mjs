@@ -27,7 +27,7 @@ await esbuild.build({
 	format: 'cjs',
 	entryNames: '[name]',
 	platform: 'node',
-	external: ['esbuild'],
+	external: ['esbuild', 'sharp'],
 	outExtension: {
 		'.js': '.cjs',
 	},
@@ -41,7 +41,7 @@ await esbuild.build({
 	format: 'esm',
 	entryNames: '[name]',
 	platform: 'node',
-	external: ['esbuild'],
+	external: ['esbuild', 'sharp'],
 	outExtension: {
 		'.js': '.mjs',
 	},
