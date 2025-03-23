@@ -5,14 +5,14 @@
  [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Exact-Realty_esbuild-plugin-responsive-images&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Exact-Realty_esbuild-plugin-responsive-images)
  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Exact-Realty_esbuild-plugin-responsive-images&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Exact-Realty_esbuild-plugin-responsive-images)
  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Exact-Realty_esbuild-plugin-responsive-images&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Exact-Realty_esbuild-plugin-responsive-images)
- ![NPM Downloads](https://img.shields.io/npm/dw/@exact-realty/esbuild-plugin-responsive-images?style=flat-square)
+ ![NPM Downloads](https://img.shields.io/npm/dw/@apeleghq/esbuild-plugin-responsive-images?style=flat-square)
 
 ## How to use
 
 ### Installing
 
 ```sh
-npm i -D @exact-realty/esbuild-plugin-responsive-images
+npm i -D @apeleghq/esbuild-plugin-responsive-images
 ```
 
 ### Configuring esbuild
@@ -20,20 +20,20 @@ npm i -D @exact-realty/esbuild-plugin-responsive-images
 In the file you have your configuration, first import this plugin
 
 ```js
-const responsiveImages = require('@exact-realty/esbuild-plugin-responsive-images');
+const responsiveImages = require('@apeleghq/esbuild-plugin-responsive-images');
 ```
 
 Or using ES module syntax:
 
 ```js
-import responsiveImages from '@exact-realty/esbuild-plugin-responsive-images';
+import responsiveImages from '@apeleghq/esbuild-plugin-responsive-images';
 ```
 
 Then, in your esbuild configuration, add `responsiveImages()` to the `plugins` list. Minimal example:
 
 ```js
 const esbuild = require('esbuild');
-const responsiveImages = require('@exact-realty/esbuild-plugin-responsive-images');
+const responsiveImages = require('@apeleghq/esbuild-plugin-responsive-images');
 
 await esbuild
 	.build({
