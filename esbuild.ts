@@ -1,6 +1,6 @@
-#!/usr/bin/env node
+#!/usr/bin/env -S node --import ./loader.mjs
 
-/* Copyright © 2021 Apeleg Limited.
+/* Copyright © 2021 Apeleg Limited. All rights reserved.
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -47,7 +47,7 @@ await esbuild.build({
 	},
 });
 
-const cjsDeclarationFiles = async (directoryPath) => {
+const cjsDeclarationFiles = async (directoryPath: string) => {
 	const entries = await readdir(directoryPath, {
 		withFileTypes: true,
 		recursive: true,
@@ -59,7 +59,7 @@ const cjsDeclarationFiles = async (directoryPath) => {
 				return entry.isFile() && entry.name.endsWith('.d.ts');
 			})
 			.map(async (file) => {
-				const name = join(file.path, file.name);
+				const name = join(file.parentPath, file.name);
 				const newName = name.slice(0, -2) + 'cts';
 
 				const contents = await readFile(name, { encoding: 'utf-8' });
